@@ -1,0 +1,64 @@
+.formContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.formEmail {
+  min-height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 6%;
+  box-sizing: border-box;
+
+  & > div {
+    width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    padding: 5% 6%;
+  }
+
+  & .title {
+    color: white;
+  }
+
+  & .form {
+    max-width: 760px;
+    width: 100%;
+  }
+
+  input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px black inset !important;
+  }
+
+  @-webkit-keyframes autofill {
+    0%,100% {
+      color: white;
+      background: transparent;
+    }
+  }
+
+  input:-webkit-autofill {
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+
+  label {
+    padding-right: 14px;
+  }
+}
+
+.disabledForm {
+  pointer-events: none;
+}

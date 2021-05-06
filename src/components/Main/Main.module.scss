@@ -1,0 +1,14 @@
+.main {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../../assets/images/main.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: invert(1);
+
+  @media (max-width: 768px) {
+    background-size: contain;
+    height: 100%;
+  }
+}

@@ -1,0 +1,184 @@
+$time: .5s;
+$burgerBackGround: white;
+
+.hamburger-wrapper {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.hamburger-main {
+    position: relative;
+    border-radius: 50px;
+}
+
+.hamburger-center {
+    content: "";
+    height: 4px;
+    width: 50px;
+    background: $burgerBackGround;
+    border-radius: 4px;
+    position: relative;
+    animation: rotateCenter0Deg $time both ease-in-out;
+}
+
+.hamburger-top {
+    content: "";
+    display: block;
+    height: 4px;
+    background: $burgerBackGround;
+    border-radius: 4px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 25px;
+    animation: rotateTop0Deg $time both ease-in-out;
+}
+
+.hamburger-bottom {
+    content: "";
+    display: block;
+    height: 4px;
+    background: $burgerBackGround;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 25px;
+    animation: rotateBottom0Deg $time both ease-in-out;
+}
+
+.hamburger-center.active {
+    animation: rotateCenter360Deg $time both ease-in-out;
+}
+
+.hamburger-top.active {
+    animation: rotateTop45Deg $time both ease-in-out;
+}
+
+.hamburger-bottom.active {
+    animation: rotateBottom45Deg $time both ease-in-out;
+}
+
+.hamburger-center.loading {
+    animation: rotateCenter360Deg $time alternate infinite ease-in-out;
+}
+
+.hamburger-top.loading {
+    animation: rotateTop45Deg $time alternate infinite ease-in-out;
+}
+
+.hamburger-bottom.loading {
+    animation: rotateBottom45Deg $time alternate infinite ease-in-out;
+}
+
+@keyframes rotateCenter0Deg {
+    from {
+        transform: rotate(315deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateTop0Deg {
+    from {
+        left: 5px;
+        transform: rotate(45deg);
+    }
+    to {
+        left: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateBottom0Deg {
+    from {
+        top: 8px;
+        right: 2px;
+        transform: rotate(45deg);
+    }
+    to {
+        top: 10px;
+        right: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateTop45Deg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        left: 5px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes rotateBottom45Deg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        top: 8px;
+        right: 2px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes rotateCenter360Deg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(315deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger-center {
+        height: 4px;
+        width: 40px;
+    }
+
+    .hamburger-top {
+        top: -10px;
+        left: 0;
+        width: 20px;
+    }
+
+    .hamburger-bottom {
+        top: 10px;
+        right: 0;
+        width: 20px;
+    }
+
+    @keyframes rotateTop45Deg {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            top: -7px;
+            left: 3px;
+            transform: rotate(45deg);
+        }
+    }
+
+    @keyframes rotateBottom45Deg {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            top: 7px;
+            right: 3px;
+            transform: rotate(45deg);
+        }
+    }
+}

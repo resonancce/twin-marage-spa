@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: calc(10px + 2vmin);
+  position: relative;
+  background-color: black;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.root {
+  opacity: 0;
+  transition: all .6s ease-in-out;
+
+  &__opacity {
+    opacity: 1;
+  }
+}
+
+p, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
